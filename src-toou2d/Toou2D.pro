@@ -1,5 +1,5 @@
 QT          += qml quick svg
-CONFIG      += plugin c++11
+CONFIG      += plugin c++17
 TEMPLATE    = lib
 TARGET      = Toou2D
 TARGET      = $$qtLibraryTarget($$TARGET)

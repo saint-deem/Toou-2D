@@ -1,5 +1,5 @@
-import QtQuick 2.6
-import QtQuick.Window 2.2
+import QtQuick 6
+import QtQuick.Window 6
 import Toou2D 1.0
 
 Window {

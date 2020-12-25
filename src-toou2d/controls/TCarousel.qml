@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 6
 import Toou2D 1.0
 
 //在有限空间内，循环播放同一类型的图片、或者其它自定义Item内容*/

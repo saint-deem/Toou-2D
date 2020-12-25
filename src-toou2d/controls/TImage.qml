@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 6
 import Toou2D 1.0
 
 // 图片容器，保留了Qt原生img的特性*/

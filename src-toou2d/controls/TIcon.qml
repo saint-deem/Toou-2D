@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 6
 import Toou2D 1.0
 
 //只能iocn,根据source来判断选择使用TAwesomelIcon 或者 TSVGIcon*/

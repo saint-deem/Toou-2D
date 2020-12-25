@@ -35,7 +35,7 @@ void ThemeBinder::onPropertyChanged()
     if(pname.contains("Changed")){
         QString bindingName = QString(pname.mid(0,pname.indexOf("Changed")));
 
-        QVariant result(property(bindingName.toStdString().c_str()).type());
+        QVariant result(property(bindingName.toStdString().c_str()).metaType());
         QVariant change(property(bindingName.toStdString().c_str()));
 
         if(!ThemeManager::getInstance()->appThemeInvalid()){
@@ -62,7 +62,7 @@ void ThemeBinder::initialize()
     {
         QMetaProperty mproperty = metaObj->property(i);
         if(!m_propertys_initfilter.contains(mproperty.name()) && !m_filterPropertyName.contains(mproperty.name())){
-            QVariant pv(mproperty.type());
+            QVariant pv(mproperty.metaType());
             pv.setValue(this->property(mproperty.name()));
             this->m_binderPropertys.insert(mproperty.name(),pv);
         }
@@ -171,7 +171,7 @@ ThemeBinder *ThemeBinder::childs(int i) const
 
 QQmlListProperty<ThemeBinder> ThemeBinder::childs()
 {
-    return QQmlListProperty<ThemeBinder>(this, m_childs);
+    return QQmlListProperty<ThemeBinder>(this, &m_childs);
 }
 
 ThemeBinder *ThemeBinder::parent() const
@@ -306,7 +306,7 @@ void ThemeBinder::onRefreshPropertys()
             QVariant result(map.value());
             t->setProperty(map.key().toStdString().c_str(),result);
         }else{
-            QVariant result(map.value().type());
+            QVariant result(map.value().metaType());
             mGetThemeDataFromManager(map.key(),result);
             if(result.isValid()){
                 t->setProperty(map.key().toStdString().c_str(),result);

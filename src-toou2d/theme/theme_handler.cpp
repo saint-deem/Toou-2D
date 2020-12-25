@@ -1,9 +1,11 @@
 #include "theme_handler.h"
 
-#include <QTextCodec>
+#include <QStringConverter>
 #include <QDebug>
 #include <QUrl>
 #include <QFile>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 /*!
   \class ThemeHandler
 
@@ -148,7 +150,7 @@ void ThemeHandler::parseINI(const QString& filename,QVariantMap& varmap)
 
     QString str =  QString::fromUtf8( file.readLine());
     while(!str.isEmpty()){
-        str.replace(QRegExp(";(.*)"),"");
+        str.replace(QRegularExpression(";(.*)"),"");
 
         int gli = str.indexOf('[');
         int gri =  str.indexOf(']');
@@ -161,10 +163,12 @@ void ThemeHandler::parseINI(const QString& filename,QVariantMap& varmap)
 
             curgroup = str.mid(gli + 1 , gri - 1);
         }else{
-            QRegExp rx("(.*)=(.*)");  // (.)(.)
+            QRegularExpression rx("(.*)=(.*)");  // (.)(.)
+            QRegularExpressionMatch match = rx.match(str);
+
             int pot = str.indexOf(rx);
             if(pot != -1){
-                curmap.insert(rx.cap(1).trimmed(), rx.cap(2).trimmed());
+                curmap.insert(match.captured(1).trimmed(), match.captured(2).trimmed());
             }
         }
 

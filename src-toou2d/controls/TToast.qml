@@ -1,5 +1,5 @@
 pragma Singleton
-import QtQuick 2.6
+import QtQuick 6
 import Toou2D 1.0
 
 /*!

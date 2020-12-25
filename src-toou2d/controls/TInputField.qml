@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 6
 import Toou2D 1.0
 
 //带有图标的输入框,兼容Qt原生全部特性。通过鼠标或键盘输入字符

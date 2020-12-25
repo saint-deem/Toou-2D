@@ -9,7 +9,7 @@
   \section1 \b Description
   基于Qt Quick(Qml) 跨平台技术打造的2D框架
 
-  \module QtQuick 2.6
+  \module QtQuick 6
 
   \section1 \b Core Class
     \table 100%

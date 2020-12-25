@@ -1,9 +1,9 @@
-import QtQuick 2.6
+import QtQuick 6
 import Toou2D 1.0
 
 /*!
     \qmltype TAwesomeIcon
-    \inqmlmodule QtQuick 2.6
+    \inqmlmodule QtQuick 6
     \brief Font Icon
     \since 5.9.x
     \ingroup qtquicktest

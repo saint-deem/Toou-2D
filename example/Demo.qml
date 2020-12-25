@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 6
 import Toou2D 1.0
 import "qrc:/util.js" as Util
 Item {
